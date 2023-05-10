@@ -69,7 +69,7 @@ const ProfilePageBlock: React.FC<Props> = ({
             </Grid>
             <Grid item xs={12} md={8} lg={9} padding="0 15px 15px">
                 <Typography fontWeight="bold" variant="h4">
-                    {userInfo.name} {userInfo.surname} {userInfo.patronymic}
+                    {userInfo.name} {userInfo.patronymic} {userInfo.surname}
                 </Typography>
                 <div>Дата рождения: {userInfo.bdate} ({getAgeString(userInfo.bdate)})</div>
                 <div>Город: {userInfo.city}</div>
