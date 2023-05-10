@@ -1,0 +1,46 @@
+.chatWrapper {
+    display: grid;
+    height: 100%;
+    max-height: 100%;
+    grid-template-rows: auto 1fr auto;
+}
+.messagesArea {
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    position: relative;
+    margin-top: 10px;
+    .messagesContainer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.message {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 5px;
+    max-width: 70%;
+    width: fit-content;
+    margin-bottom: 5px;
+    &.ownMessage {
+        align-self: flex-end;
+        background: lightgreen;
+        .date {
+            text-align: right;
+        }
+    }
+    &.partnerMessage {
+        background: lightcyan;
+    }
+
+    .date {
+        color: grey;
+        font-size: 0.6em;
+    }
+}
