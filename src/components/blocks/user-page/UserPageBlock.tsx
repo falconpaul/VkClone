@@ -8,6 +8,7 @@ import CustomFileInput from "../../atoms/custom-file-input/CustomFileInput"
 import PostCard from "../post-card/PostCard"
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { getAgeString } from "../../../utils/date-utils"
 
 const UserPageBlock: React.FC<Props> = ({
     userInfo,
@@ -70,7 +71,7 @@ const UserPageBlock: React.FC<Props> = ({
                 <Typography fontWeight="bold" variant="h4">
                     {userInfo.name} {userInfo.surname} {userInfo.patronymic}
                 </Typography>
-                <div>Дата рождения: {userInfo.bdate}</div>
+                <div>Дата рождения: {userInfo.bdate} ({getAgeString(userInfo.bdate)})</div>
                 <div>Город: {userInfo.city}</div>
                 <div>ВУЗ: {userInfo.university}</div>
             </Grid>

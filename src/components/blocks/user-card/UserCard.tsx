@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { AppDispatch, RootState } from "../../../store";
 import { subscribe, unsubscribe } from "../../../store/profile/profile";
 import { selectTokenData, UserInfo } from "../../../store/user/user";
+import { getAgeString } from "../../../utils/date-utils";
 import SmallAvatarAtom from "../../atoms/avatar/SmallAvatarAtom";
 
 const UserCard: React.FC<Props> = ({ tokenData, user, subscribe, unsubscribe }) => {
@@ -58,7 +59,7 @@ const UserCard: React.FC<Props> = ({ tokenData, user, subscribe, unsubscribe }) 
                         {user.name} {user.surname}
                     </Box>
                 }
-                subheader={user.city}
+                subheader={`${user.city}, ${getAgeString(user.bdate)}`}
             />
         </Card>
     )

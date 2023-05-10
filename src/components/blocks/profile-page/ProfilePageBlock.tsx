@@ -5,6 +5,7 @@ import { AppDispatch, RootState } from "../../../store"
 import { loadUserData, selectUserInfo, selectUserPosts, subscribe, unsubscribe } from "../../../store/profile/profile";
 import { useNavigate, useParams } from "react-router";
 import PostCard from "../post-card/PostCard";
+import { getAgeString } from "../../../utils/date-utils";
 
 const ProfilePageBlock: React.FC<Props> = ({
     userInfo,
@@ -70,7 +71,7 @@ const ProfilePageBlock: React.FC<Props> = ({
                 <Typography fontWeight="bold" variant="h4">
                     {userInfo.name} {userInfo.surname} {userInfo.patronymic}
                 </Typography>
-                <div>Дата рождения: {userInfo.bdate}</div>
+                <div>Дата рождения: {userInfo.bdate} ({getAgeString(userInfo.bdate)})</div>
                 <div>Город: {userInfo.city}</div>
                 <div>ВУЗ: {userInfo.university}</div>
             </Grid>
